@@ -15,6 +15,10 @@ app.use("/api/usuarios", require("../routes/usuariosRoute"));
 app.use("/api/auth", require("../routes/auth"));
 app.use("/api/clientes", require("../routes/clientesRoutes"));
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
