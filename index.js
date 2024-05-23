@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const conectarBD = require("../config/db");
+const conectarBD = require("./config/db");
 
 conectarBD();
 const app = express();
@@ -11,9 +11,9 @@ const port = process.env.PORT || 5000;
 
 // rutas modulos
 
-app.use("/api/usuarios", require("../routes/usuariosRoute"));
-app.use("/api/auth", require("../routes/auth"));
-app.use("/api/clientes", require("../routes/clientesRoutes"));
+app.use("/api/usuarios", require("./routes/usuariosRoute"));
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/clientes", require("./routes/clientesRoutes"));
 
 app.get("/", (req, res) => {
   res.send("Hello World!!!");
